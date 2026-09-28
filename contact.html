@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Devis gratuit et contact — Anthony Gand, couvreur zingueur</title>
+<meta name="description" content="Obtenez un devis gratuit et détaillé pour vos travaux de toiture. 345 chemin des Teppes, 39570 Courlaoux. Du lundi au vendredi, 7 h 30 – 20 h 30.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Devis gratuit et contact — Anthony Gand, couvreur zingueur">
+<meta property="og:description" content="Obtenez un devis gratuit et détaillé pour vos travaux de toiture. 345 chemin des Teppes, 39570 Courlaoux. Du lundi au vendredi, 7 h 30 – 20 h 30.">
+<meta property="og:image" content="assets/img/hero-couvreur-demoussage.webp">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="assets/logo/favicon.png" type="image/png">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/apparitions.css">
+<link rel="stylesheet" href="css/toiture.css">
+<script>
+(function () {
+  var r = document.documentElement;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  r.dataset.anim = 'oui';
+  addEventListener('load', function () {
+    setTimeout(function () {
+      if (!r.dataset.animPrete) r.removeAttribute('data-anim');
+    }, 1000);
+  });
+})();
+</script>
+</head>
+<body>
+<a class="evitement" href="#principal">Aller au contenu</a>
+
+<header class="entete" id="entete" data-fond="clair">
+  <div class="entete__interieur">
+    <a class="marque" href="index.html" aria-label="Anthony Gand, couvreur zingueur, accueil">
+      <img class="marque__signe marque__logo" src="assets/logo/logo-rond.png" width="400" height="400" alt="">
+      <span class="marque__nom">Anthony Gand<span class="marque__metier">Couvreur zingueur</span></span>
+    </a>
+
+    <nav class="nav" id="menu" aria-label="Navigation principale">
+      <a class="nav__lien" href="index.html">Accueil</a>
+      <a class="nav__lien" href="services.html">Prestations</a>
+      <a class="nav__lien" href="apropos.html">À propos</a>
+      <a class="nav__lien" href="contact.html" aria-current="page">Contact</a>
+      <div class="nav__action"><a class="bouton bouton--plein bouton--large" href="contact.html">Devis gratuit</a></div>
+    </nav>
+
+    <div class="entete__action">
+      <a class="bouton bouton--entete" href="contact.html">Devis gratuit</a>
+    </div>
+
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+      <span class="burger__trait"></span><span class="burger__trait"></span><span class="burger__trait"></span>
+    </button>
+  </div>
+</header>
+
+<main id="principal">
+
+<section class="hero-page">
+  <div class="contenu">
+    <p class="badge badge--accent hero-page__badge">Devis / contact</p>
+    <h1 class="hero-page__titre">Parlons de votre toiture : le devis est gratuit</h1>
+    <p class="hero-page__texte">
+      Solliciter nos services, c’est la garantie d’avoir une toiture étanche pour les années
+      à venir. Décrivez vos travaux via ce formulaire, ou appelez directement Anthony Gand
+      au <a href="tel:+33646623904">06 46 62 39 04</a>.
+    </p>
+  </div>
+</section>
+
+<section class="section section--creme section--haut-nul" id="formulaire">
+  <div class="contenu">
+    <div class="formulaire-bloc">
+      <img class="visuel-photo visuel--pleine" src="assets/img/dessous-de-toit.webp"
+             width="1200" height="796" fetchpriority="high"
+             alt="Débord de toit habillé et gouttière sous une toiture neuve.">
+
+      <form class="formulaire" id="devis" novalidate>
+        <div class="formulaire__corps">
+          <h2 class="formulaire__titre">Décrivez vos travaux</h2>
+          <p class="formulaire__intro">
+            Les champs marqués d'une étoile sont nécessaires pour vous répondre.
+            Aucune donnée n'est envoyée : ce site est une maquette de démonstration.
+          </p>
+
+          <div class="champs">
+            <div class="champ">
+              <label for="nom">Nom <span aria-hidden="true">*</span></label>
+              <input type="text" id="nom" name="nom" autocomplete="family-name" required aria-describedby="err-nom">
+              <p class="champ__erreur" id="err-nom">Indiquez votre nom.</p>
+            </div>
+
+            <div class="champ">
+              <label for="prenom">Prénom <span aria-hidden="true">*</span></label>
+              <input type="text" id="prenom" name="prenom" autocomplete="given-name" required aria-describedby="err-prenom">
+              <p class="champ__erreur" id="err-prenom">Indiquez votre prénom.</p>
+            </div>
+
+            <div class="champ">
+              <label for="email">E-mail <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="err-email">
+              <p class="champ__erreur" id="err-email">Une adresse e-mail valide, pour vous envoyer le devis.</p>
+            </div>
+
+            <div class="champ">
+              <label for="telephone">Téléphone <span>(facultatif)</span></label>
+              <input type="tel" id="telephone" name="telephone" autocomplete="tel">
+            </div>
+
+            <div class="champ champ--plein">
+              <label for="travaux">Type de travaux</label>
+              <select id="travaux" name="travaux">
+                <option value="">Choisissez</option>
+                <option>Traitement de toiture</option>
+                <option>Dessous de toit PVC / bois</option>
+                <option>Gouttières et zinguerie</option>
+                <option>Traitement de charpente</option>
+                <option>Étanchéité ou isolation de toiture</option>
+                <option>Autre travaux de toit</option>
+              </select>
+            </div>
+
+            <div class="champ champ--plein">
+              <label for="message">Message <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" required minlength="20" aria-describedby="err-message"
+                placeholder="Décrivez vos travaux : type de toiture, surface, commune…"></textarea>
+              <p class="champ__erreur" id="err-message">Vingt caractères au minimum : une phrase suffit.</p>
+            </div>
+          </div>
+
+          <div class="formulaire__pied">
+            <p class="formulaire__mention">Devis gratuit et détaillé.</p>
+            <button class="bouton bouton--plein" type="submit">Envoyer la demande</button>
+          </div>
+        </div>
+
+        <div class="formulaire__succes" role="status" aria-live="polite">
+          <div class="formulaire__succes-signe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>
+          </div>
+          <h3>Demande enregistrée</h3>
+          <p id="succes-detail">Nous revenons vers vous rapidement avec votre devis gratuit.</p>
+          <p style="margin-block-start: var(--sp-8)">
+            <button class="bouton bouton--contour" type="button" id="nouvelle-demande">Faire une autre demande</button>
+          </p>
+        </div>
+      </form>
+
+      <aside class="pratique">
+        <h2 class="pratique__titre">Joindre Anthony Gand directement</h2>
+        <div class="pratique__liste">
+          <div class="pratique__item">
+            <p class="pratique__intitule">Téléphone</p>
+            <p class="pratique__valeur"><a href="tel:+33646623904">06 46 62 39 04</a></p>
+          </div>
+          <div class="pratique__item">
+            <p class="pratique__intitule">E-mail</p>
+            <p class="pratique__valeur"><a href="mailto:m.ghabitat@hotmail.fr">m.ghabitat@hotmail.fr</a></p>
+          </div>
+          <div class="pratique__item">
+            <p class="pratique__intitule">Adresse</p>
+            <p class="pratique__valeur">345 chemin des Teppes, 39570 Courlaoux</p>
+          </div>
+          <div class="pratique__item">
+            <p class="pratique__intitule">Horaires</p>
+            <p class="pratique__valeur">Du lundi au vendredi, 7 h 30 – 20 h 30.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sombre">
+  <div class="contenu">
+    <div class="recherche">
+      <p class="surtitre">Zone d'intervention</p>
+      <h2 class="recherche__titre">Est-ce qu'on vient chez vous&nbsp;?</h2>
+      <p class="section-chapo">Notre zone d’intervention couvre cinq départements.</p>
+
+      <div class="communes">
+        <span class="commune">Jura (39)</span>
+        <span class="commune">Saône-et-Loire (71)</span>
+        <span class="commune">Ain (01)</span>
+        <span class="commune">Côte-d’Or (21)</span>
+        <span class="commune">Doubs (25)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--creme" id="informations-legales">
+  <div class="contenu contenu--etroit">
+    <div class="legal">
+      <h2>Informations légales</h2>
+      <p>
+        Anthony Gand, couvreur zingueur — 345 chemin des Teppes, 39570 Courlaoux.
+        Tous les travaux effectués sont couverts par une garantie décennale et une
+        responsabilité civile.
+      </p>
+      <p>
+        Ce site est une maquette de démonstration réalisée par OBT Agency à partir du site
+        actuel de l’entreprise. Le formulaire n'envoie aucune donnée : rien n'est transmis,
+        stocké ni traité.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pied">
+  <div class="contenu">
+    <div class="pied__haut">
+      <div>
+        <a class="marque" href="index.html" aria-label="Anthony Gand, couvreur zingueur, accueil">
+      <img class="marque__signe marque__logo" src="assets/logo/logo-rond.png" width="400" height="400" alt="">
+      <span class="marque__nom">Anthony Gand<span class="marque__metier">Couvreur zingueur</span></span>
+    </a>
+        <p class="pied__accroche">Couverture, étanchéité et zinguerie depuis 2009. Tous les travaux sont couverts par une garantie décennale et une responsabilité civile.</p>
+      </div>
+
+      <div>
+        <p class="pied__titre">Prestations</p>
+        <ul class="pied__liste">
+          <li><a href="services.html#traitement-toiture">Traitement de toiture</a></li>
+          <li><a href="services.html#dessous-de-toit">Dessous de toit PVC / bois</a></li>
+          <li><a href="services.html#gouttieres">Gouttières et zinguerie</a></li>
+          <li><a href="services.html#charpente">Traitement de charpente</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Zone d'intervention</p>
+        <ul class="pied__liste">
+          <li>Jura</li>
+          <li>Saône-et-Loire</li>
+          <li>Ain</li>
+          <li>Côte-d'Or</li>
+          <li>Doubs</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Contact</p>
+        <ul class="pied__liste">
+          <li><a href="tel:+33646623904">06 46 62 39 04</a></li>
+          <li><a href="mailto:m.ghabitat@hotmail.fr">m.ghabitat@hotmail.fr</a></li>
+          <li>345 chemin des Teppes<br>39570 Courlaoux</li>
+          <li>Lundi – vendredi, 7 h 30 – 20 h 30</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pied__bas">
+      <p>Anthony Gand — couvreur zingueur, Courlaoux (Jura). Garantie décennale et responsabilité civile.</p>
+      <p>Maquette de démonstration · OBT Agency</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/apparitions.js"></script>
+<script src="js/main.js"></script>
+<script src="js/formulaire.js"></script>
+</body>
+</html>
