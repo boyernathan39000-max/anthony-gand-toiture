@@ -295,14 +295,13 @@ a.carte--nu { display: block; color: inherit; text-decoration: none; }
   .appel--large .appel__action--double { flex-wrap: wrap; }
 }
 
-.carrousel__barre {
+.carrousel__onglets {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--sp-6);
-  margin-block-end: var(--sp-6);
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-2);
+  margin-block-end: var(--sp-10);
 }
-.carrousel__onglets { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
 .carrousel__onglet {
   height: 44px;
   padding-inline: var(--sp-5);
@@ -318,27 +317,85 @@ a.carte--nu { display: block; color: inherit; text-decoration: none; }
 }
 @media (hover: hover) { .carrousel__onglet:hover { border-color: var(--c-gris); } }
 .carrousel__onglet[aria-current='true'] { background: var(--c-orange); border-color: var(--c-orange); color: var(--c-blanc); }
-.carrousel__fleches { display: flex; gap: var(--sp-3); margin: 0; }
 
-.prestations.carrousel__piste {
+.carrousel__scene { position: relative; }
+.carrousel__fenetre {
+  overflow: hidden;
+  padding-block: var(--sp-4);
+  margin-block: calc(var(--sp-4) * -1);
+}
+.carrousel__piste {
   display: flex;
+  align-items: flex-start;
   gap: var(--sp-6);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  overscroll-behavior-x: contain;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: transform .45s cubic-bezier(.16, 1, .3, 1);
+  will-change: transform;
 }
-.carrousel__piste::-webkit-scrollbar { display: none; }
-.carrousel__piste > .presta {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
-  box-shadow: none;
+.presta-slide {
+  flex: 0 0 auto;
+  width: min(88vw, 1040px);
+  transition: opacity .6s cubic-bezier(.16, 1, .3, 1), transform .6s cubic-bezier(.16, 1, .3, 1), filter .6s cubic-bezier(.16, 1, .3, 1);
 }
-@media (prefers-reduced-motion: reduce) { .prestations.carrousel__piste { scroll-behavior: auto; } }
-@media (max-width: 767px) {
-  .carrousel__barre { flex-direction: column; align-items: stretch; }
-  .carrousel__onglets { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+.presta-slide > .presta { height: 100%; }
+.presta-slide[aria-hidden='true'] { opacity: .35; transform: scale(.92); }
+.presta-slide.est-voisine { filter: blur(7px); }
+.presta-slide[aria-hidden='true'] > .presta { cursor: pointer; }
+
+.carrousel__fleche {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--c-orange);
+  color: var(--c-blanc);
+  box-shadow: 0 8px 24px rgba(34, 34, 34, .18);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background var(--tr-rapide);
+}
+@media (hover: hover) { .carrousel__fleche:hover { background: var(--c-gris); } }
+.carrousel__fleche:active { transform: translateY(-50%) scale(.94); }
+.carrousel__fleche:focus-visible { outline: 2px solid var(--c-orange); outline-offset: 3px; }
+.carrousel__fleche--prec { left: clamp(var(--sp-4), 6vw, 120px); }
+.carrousel__fleche--suiv { right: clamp(var(--sp-4), 6vw, 120px); }
+
+@media (max-width: 768px) {
+  .carrousel__onglets { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; padding-inline: 2px; }
   .carrousel__onglet { flex-shrink: 0; }
-  .carrousel__fleches { justify-content: flex-end; }
+  .carrousel__fleche { width: 40px; height: 40px; top: 180px; }
+  .carrousel__fleche--prec { left: var(--sp-2); }
+  .carrousel__fleche--suiv { right: var(--sp-2); }
 }
+@media (prefers-reduced-motion: reduce) {
+  .carrousel__piste, .presta-slide { transition: none; }
+}
+@media (max-width: 768px) {
+  .carrousel__scene {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: "fenetre fenetre" "prec suiv";
+    justify-content: center;
+    column-gap: var(--sp-4);
+    row-gap: var(--sp-6);
+  }
+  .carrousel__fenetre { grid-area: fenetre; }
+  .carrousel__fleche { position: static; transform: none; width: 48px; height: 48px; }
+  .carrousel__fleche:active { transform: scale(.94); }
+  .carrousel__fleche--prec { grid-area: prec; }
+  .carrousel__fleche--suiv { grid-area: suiv; }
+}
+@media (max-width: 768px) {
+  .carrousel__scene { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-6) var(--sp-4); }
+  .carrousel__fenetre { flex: 0 0 100%; order: 0; }
+  .carrousel__fleche { order: 1; }
+}
+.carrousel__fenetre { transition: height .45s cubic-bezier(.16, 1, .3, 1); box-sizing: border-box; }

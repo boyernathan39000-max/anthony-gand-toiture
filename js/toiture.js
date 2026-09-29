@@ -19,56 +19,122 @@
   });
 })();
 
-/* Carrousel des prestations : flèches, onglets, glisser au doigt (défilement
-   natif avec aimantation) et ancres du pied de page (#gouttieres…). */
+/* Carrousel des prestations — même mécanique que « Nos dernières
+   réalisations » d'obt-agency.fr : trois copies de la série, départ sur la
+   copie du milieu, recalage invisible d'une longueur de série en fin de
+   transition. Boucle infinie dans les deux sens. En plus : les onglets 01–04,
+   le glisser au doigt, un clic sur une voisine et les ancres (#gouttieres…). */
 (function () {
   'use strict';
-  var bloc = document.getElementById('carrousel-prestations');
-  if (!bloc) return;
-  var piste = bloc.querySelector('.carrousel__piste');
-  var fiches = Array.prototype.slice.call(piste.children);
-  var onglets = bloc.querySelectorAll('.carrousel__onglet');
-  var prec = bloc.querySelector('[data-carrousel="prec"]');
-  var suiv = bloc.querySelector('[data-carrousel="suiv"]');
+  var root = document.getElementById('carrousel-prestations');
+  if (!root) return;
+  var track = root.querySelector('[data-carousel-track]');
+  var viewport = root.querySelector('.carrousel__fenetre');
+  var originals = Array.prototype.slice.call(track.querySelectorAll('[data-carousel-slide]'));
+  var onglets = root.querySelectorAll('.carrousel__onglet');
+  var count = originals.length;
+  var ids = originals.map(function (li) { var a = li.querySelector('[id]'); return a ? a.id : ''; });
 
-  var courant = function () {
-    var meilleur = 0;
-    fiches.forEach(function (f, k) {
-      if (Math.abs(f.offsetLeft - piste.offsetLeft - piste.scrollLeft) <
-          Math.abs(fiches[meilleur].offsetLeft - piste.offsetLeft - piste.scrollLeft)) meilleur = k;
+  var copie = function () {
+    var frag = document.createDocumentFragment();
+    originals.forEach(function (node) {
+      var c = node.cloneNode(true);
+      c.setAttribute('data-carousel-clone', '');
+      c.querySelectorAll('[id]').forEach(function (el) { el.removeAttribute('id'); });
+      frag.appendChild(c);
     });
-    return meilleur;
+    return frag;
   };
-  var aller = function (i, instantane) {
-    i = Math.max(0, Math.min(fiches.length - 1, i));
-    piste.scrollTo({ left: fiches[i].offsetLeft - piste.offsetLeft, behavior: instantane ? 'instant' : 'smooth' });
-  };
-  var maj = function () {
-    var i = courant();
-    onglets.forEach(function (o, k) { o.setAttribute('aria-current', String(k === i)); });
-    prec.disabled = i <= 0;
-    suiv.disabled = i >= fiches.length - 1;
-  };
+  track.insertBefore(copie(), track.firstChild);
+  track.appendChild(copie());
 
-  prec.addEventListener('click', function () { aller(courant() - 1); });
-  suiv.addEventListener('click', function () { aller(courant() + 1); });
-  onglets.forEach(function (o) { o.addEventListener('click', function () { aller(Number(o.dataset.cible)); }); });
-  piste.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowRight') { e.preventDefault(); aller(courant() + 1); }
-    if (e.key === 'ArrowLeft') { e.preventDefault(); aller(courant() - 1); }
+  var slides = Array.prototype.slice.call(track.querySelectorAll('[data-carousel-slide]'));
+  var index = count;
+  var anime = false;
+
+  function place(avecTransition) {
+    var active = slides[index];
+    viewport.scrollLeft = 0;   /* un saut d'ancre peut avoir fait défiler la fenêtre */
+    track.style.transition = avecTransition ? '' : 'none';
+    var offset = active.offsetLeft - (viewport.clientWidth - active.offsetWidth) / 2;
+    track.style.transform = 'translateX(' + (-offset) + 'px)';
+    /* La fenêtre prend la hauteur de la fiche active : pas de vide sous une
+       fiche courte quand sa voisine est plus haute. */
+    viewport.style.height = (active.offsetHeight + 32) + 'px';
+    if (!avecTransition) { void track.offsetWidth; track.style.transition = ''; }
+    slides.forEach(function (sl, i) {
+      var actif = i === index;
+      sl.setAttribute('aria-hidden', actif ? 'false' : 'true');
+      sl.classList.toggle('est-voisine', i === index - 1 || i === index + 1);
+      sl.querySelectorAll('a, button').forEach(function (el) { el.tabIndex = actif ? 0 : -1; });
+    });
+    var k = index % count;
+    onglets.forEach(function (o, j) { o.setAttribute('aria-current', String(j === k)); });
+  }
+  function normaliser() {
+    var avant = index;
+    while (index < count) index += count;
+    while (index >= count * 2) index -= count;
+    if (index !== avant) place(false);
+    anime = false;
+  }
+  var garde;
+  function aller(pas) {
+    var suivant = index + pas;
+    if (suivant < 0 || suivant >= count * 3) return;
+    anime = true;
+    index = suivant;
+    place(true);
+    clearTimeout(garde);
+    garde = setTimeout(function () { if (anime) normaliser(); }, 1000);
+  }
+  function versFiche(k) {
+    var pas = k - (index % count);
+    if (pas > count / 2) pas -= count;
+    if (pas < -count / 2) pas += count;
+    if (pas) aller(pas);
+  }
+
+  track.addEventListener('transitionend', function (e) {
+    if (e.propertyName === 'transform' && e.target === track) normaliser();
   });
-  var t;
-  piste.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(maj, 60); }, { passive: true });
-  window.addEventListener('resize', function () { aller(courant(), true); });
+  root.querySelector('[data-carousel-prev]').addEventListener('click', function () { aller(-1); });
+  root.querySelector('[data-carousel-next]').addEventListener('click', function () { aller(1); });
+  onglets.forEach(function (o) { o.addEventListener('click', function () { versFiche(Number(o.dataset.cible)); }); });
+  root.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') aller(-1);
+    else if (e.key === 'ArrowRight') aller(1);
+  });
+  /* Un clic sur une fiche voisine l'amène au centre. */
+  slides.forEach(function (sl, i) {
+    sl.addEventListener('click', function (e) {
+      if (i === index) return;
+      e.preventDefault();
+      aller(i - index);
+    });
+  });
+  /* Glisser au doigt : un geste horizontal de plus de 40 px change de fiche. */
+  var x0 = null, y0 = null;
+  viewport.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  viewport.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) aller(dx < 0 ? 1 : -1);
+    x0 = null;
+  }, { passive: true });
 
-  var depuisAncre = function () {
-    var k = fiches.findIndex(function (f) { return '#' + f.id === location.hash; });
+  var t;
+  window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(function () { place(false); }, 120); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { place(false); });
+
+  function depuisAncre() {
+    var k = ids.indexOf(location.hash.slice(1));
     if (k < 0) return;
-    bloc.scrollIntoView({ block: 'start', behavior: 'instant' });
-    aller(k, true);
-    maj();
-  };
+    index = count + k;
+    place(false);
+    root.scrollIntoView({ block: 'start', behavior: 'instant' });
+  }
   window.addEventListener('hashchange', depuisAncre);
+  place(false);
   depuisAncre();
-  maj();
 })();

@@ -74,129 +74,133 @@
 </section>
 
 <section class="section section--creme section--haut-nul">
-  <div class="contenu">
-    <div class="carrousel" id="carrousel-prestations">
-      <div class="carrousel__barre">
-        <div class="carrousel__onglets" role="tablist" aria-label="Choisir une prestation">
-          <button class="carrousel__onglet" type="button" data-cible="0" aria-current="true">01 · Toiture</button>
-          <button class="carrousel__onglet" type="button" data-cible="1">02 · Dessous de toit</button>
-          <button class="carrousel__onglet" type="button" data-cible="2">03 · Gouttières</button>
-          <button class="carrousel__onglet" type="button" data-cible="3">04 · Charpente</button>
-        </div>
-        <div class="rail__commandes carrousel__fleches">
-          <button class="rail__fleche" type="button" data-carrousel="prec" aria-label="Prestation précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
-          <button class="rail__fleche" type="button" data-carrousel="suiv" aria-label="Prestation suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-        </div>
+  <div class="carrousel" id="carrousel-prestations" data-carousel>
+    <div class="contenu">
+      <div class="carrousel__onglets" aria-label="Choisir une prestation">
+        <button class="carrousel__onglet" type="button" data-cible="0" aria-current="true">01 · Toiture</button>
+        <button class="carrousel__onglet" type="button" data-cible="1">02 · Dessous de toit</button>
+        <button class="carrousel__onglet" type="button" data-cible="2">03 · Gouttières</button>
+        <button class="carrousel__onglet" type="button" data-cible="3">04 · Charpente</button>
       </div>
-    <div class="prestations carrousel__piste" tabindex="0" role="region" aria-label="Les 4 prestations, une par une">
-
-      <article class="presta" id="traitement-toiture">
-        <div>
-          <div class="presta__entete">
-            <p class="badge badge--accent">Durée de vie prolongée</p>
-            <p class="presta__numero">01</p>
-          </div>
-          <h2 class="presta__titre">Traitement de toiture</h2>
-          <p class="presta__intro">
-            Je vous propose un procédé exclusif pour prolonger la durée de vie de votre
-            toiture. Je vous accompagne dans sa rénovation, étape par étape.
-          </p>
-          <ul class="presta__liste">
-            <li>Démoussage</li>
-            <li>Traitement</li>
-            <li>Rinçage</li>
-            <li>Réimperméabilisation avec hydrofuge ou peinture de toit</li>
-          </ul>
-          <p class="presta__note">
-            L’entretien préserve la toiture et garantit l’étanchéité et l’isolation de votre
-            habitation.
-          </p>
-        </div>
-        <img class="visuel-photo visuel--1x1 presta__visuel" src="assets/img/tuiles-apres-traitement.webp"
-             width="1320" height="1632" loading="lazy"
-             alt="Tuiles plates après démoussage et traitement, redevenues orange vif.">
-      </article>
-
-      <article class="presta" id="dessous-de-toit">
-        <div>
-          <div class="presta__entete">
-            <p class="badge badge--accent">Moins de pertes de chaleur</p>
-            <p class="presta__numero">02</p>
-          </div>
-          <h2 class="presta__titre">Dessous de toit PVC / bois</h2>
-          <p class="presta__intro">
-            Je crée une harmonie entre les menuiseries de votre maison, le bardage et la
-            sous-toiture. Comme les menuiseries, le dessous de toit peut être :
-          </p>
-          <ul class="presta__liste">
-            <li>En bois, avec possibilité de le peindre de la couleur désirée, en harmonie avec le reste de votre maison</li>
-            <li>En PVC : résistant, longue durée de vie, très léger et disponible en divers coloris</li>
-          </ul>
-          <p class="presta__note">
-            Un débord de toit habillé est plus esthétique et limite les déperditions de chaleur
-            dans les greniers. Je peux aussi poser une couche d’isolation sous le cache-moineaux.
-          </p>
-        </div>
-        <img class="visuel-photo visuel--1x1 presta__visuel" src="assets/img/dessous-de-toit-rive-zinc.webp"
-             width="1800" height="606" loading="lazy"
-             alt="Dessous de toit habillé en PVC blanc et rive en zinc neuve.">
-      </article>
-
-      <article class="presta" id="gouttieres">
-        <div>
-          <div class="presta__entete">
-            <p class="badge badge--accent">Contre les infiltrations</p>
-            <p class="presta__numero">03</p>
-          </div>
-          <h2 class="presta__titre">Gouttières et zinguerie</h2>
-          <p class="presta__intro">
-            Par temps de pluie, les gouttières évacuent l’eau et évitent les infiltrations au
-            niveau de la toiture et des fondations.
-          </p>
-          <ul class="presta__liste">
-            <li>Pose de gouttières</li>
-            <li>Remplacement de gouttières en zinc et PVC</li>
-            <li>Abergements et manteaux de cheminée</li>
-            <li>Habillage de planches de rives</li>
-          </ul>
-          <p class="presta__note">
-            Je suis qualifié pour la pose des gouttières en zinc, en cuivre ou en PVC, selon
-            vos besoins.
-          </p>
-        </div>
-        <img class="visuel-photo visuel--1x1 presta__visuel" src="assets/img/gouttiere-zinc.webp"
-             width="1140" height="1323" loading="lazy"
-             alt="Gouttière et descente en zinc neuves le long d'une façade.">
-      </article>
-
-      <article class="presta" id="charpente">
-        <div>
-          <div class="presta__entete">
-            <p class="badge badge--accent">Contre les insectes du bois</p>
-            <p class="presta__numero">04</p>
-          </div>
-          <h2 class="presta__titre">Traitement de charpente</h2>
-          <p class="presta__intro">
-            Le traitement par injection, curatif et préventif, est le plus souvent utilisé pour
-            les charpentes dites traditionnelles.
-          </p>
-          <ul class="presta__liste">
-            <li>Traitement du bois par injection contre les insectes à larves xylophages</li>
-            <li>Traitement curatif : il détruit les insectes installés dans votre charpente</li>
-            <li>Protection du bois contre de futures attaques</li>
-            <li>Traitement préventif, conseillé dès que la charpente a plus de 10 ans</li>
-          </ul>
-          <p class="presta__note">
-            Un traitement préventif coûte dix à vingt fois moins cher qu’une rénovation complète
-            de toiture.
-          </p>
-        </div>
-        <img class="visuel-photo visuel--1x1 presta__visuel" src="assets/img/pignon-bois-traite.webp"
-             width="1400" height="899" loading="lazy"
-             alt="Pignon en bois traité et protégé sous la toiture d'un bâtiment.">
-      </article>
-
     </div>
+
+    <div class="carrousel__scene">
+      <button class="carrousel__fleche carrousel__fleche--prec" type="button" data-carousel-prev aria-label="Prestation précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+      <div class="carrousel__fenetre">
+        <ul class="carrousel__piste" data-carousel-track>
+          <li class="presta-slide" data-carousel-slide>
+    <article class="presta" id="traitement-toiture">
+            <div>
+              <div class="presta__entete">
+                <p class="badge badge--accent">Durée de vie prolongée</p>
+                <p class="presta__numero">01</p>
+              </div>
+              <h2 class="presta__titre">Traitement de toiture</h2>
+              <p class="presta__intro">
+                Je vous propose un procédé exclusif pour prolonger la durée de vie de votre
+                toiture. Je vous accompagne dans sa rénovation, étape par étape.
+              </p>
+              <ul class="presta__liste">
+                <li>Démoussage</li>
+                <li>Traitement</li>
+                <li>Rinçage</li>
+                <li>Réimperméabilisation avec hydrofuge ou peinture de toit</li>
+              </ul>
+              <p class="presta__note">
+                L’entretien préserve la toiture et garantit l’étanchéité et l’isolation de votre
+                habitation.
+              </p>
+            </div>
+            <img class="visuel-photo visuel--1x1 presta__visuel" src="assets/img/tuiles-apres-traitement.webp"
+                 width="1320" height="1632" loading="lazy"
+                 alt="Tuiles plates après démoussage et traitement, redevenues orange vif.">
+          </article>
+          </li>
+          <li class="presta-slide" data-carousel-slide>
+    <article class="presta" id="dessous-de-toit">
+            <div>
+              <div class="presta__entete">
+                <p class="badge badge--accent">Moins de pertes de chaleur</p>
+                <p class="presta__numero">02</p>
+              </div>
+              <h2 class="presta__titre">Dessous de toit PVC / bois</h2>
+              <p class="presta__intro">
+                Je crée une harmonie entre les menuiseries de votre maison, le bardage et la
+                sous-toiture. Comme les menuiseries, le dessous de toit peut être :
+              </p>
+              <ul class="presta__liste">
+                <li>En bois, avec possibilité de le peindre de la couleur désirée, en harmonie avec le reste de votre maison</li>
+                <li>En PVC : résistant, longue durée de vie, très léger et disponible en divers coloris</li>
+              </ul>
+              <p class="presta__note">
+                Un débord de toit habillé est plus esthétique et limite les déperditions de chaleur
+                dans les greniers. Je peux aussi poser une couche d’isolation sous le cache-moineaux.
+              </p>
+            </div>
+            <img class="visuel-photo visuel--1x1 presta__visuel" src="assets/img/dessous-de-toit-rive-zinc.webp"
+                 width="1800" height="606" loading="lazy"
+                 alt="Dessous de toit habillé en PVC blanc et rive en zinc neuve.">
+          </article>
+          </li>
+          <li class="presta-slide" data-carousel-slide>
+    <article class="presta" id="gouttieres">
+            <div>
+              <div class="presta__entete">
+                <p class="badge badge--accent">Contre les infiltrations</p>
+                <p class="presta__numero">03</p>
+              </div>
+              <h2 class="presta__titre">Gouttières et zinguerie</h2>
+              <p class="presta__intro">
+                Par temps de pluie, les gouttières évacuent l’eau et évitent les infiltrations au
+                niveau de la toiture et des fondations.
+              </p>
+              <ul class="presta__liste">
+                <li>Pose de gouttières</li>
+                <li>Remplacement de gouttières en zinc et PVC</li>
+                <li>Abergements et manteaux de cheminée</li>
+                <li>Habillage de planches de rives</li>
+              </ul>
+              <p class="presta__note">
+                Je suis qualifié pour la pose des gouttières en zinc, en cuivre ou en PVC, selon
+                vos besoins.
+              </p>
+            </div>
+            <img class="visuel-photo visuel--1x1 presta__visuel" src="assets/img/gouttiere-zinc.webp"
+                 width="1140" height="1323" loading="lazy"
+                 alt="Gouttière et descente en zinc neuves le long d'une façade.">
+          </article>
+          </li>
+          <li class="presta-slide" data-carousel-slide>
+    <article class="presta" id="charpente">
+            <div>
+              <div class="presta__entete">
+                <p class="badge badge--accent">Contre les insectes du bois</p>
+                <p class="presta__numero">04</p>
+              </div>
+              <h2 class="presta__titre">Traitement de charpente</h2>
+              <p class="presta__intro">
+                Le traitement par injection, curatif et préventif, est le plus souvent utilisé pour
+                les charpentes dites traditionnelles.
+              </p>
+              <ul class="presta__liste">
+                <li>Traitement du bois par injection contre les insectes à larves xylophages</li>
+                <li>Traitement curatif : il détruit les insectes installés dans votre charpente</li>
+                <li>Protection du bois contre de futures attaques</li>
+                <li>Traitement préventif, conseillé dès que la charpente a plus de 10 ans</li>
+              </ul>
+              <p class="presta__note">
+                Un traitement préventif coûte dix à vingt fois moins cher qu’une rénovation complète
+                de toiture.
+              </p>
+            </div>
+            <img class="visuel-photo visuel--1x1 presta__visuel" src="assets/img/pignon-bois-traite.webp"
+                 width="1400" height="899" loading="lazy"
+                 alt="Pignon en bois traité et protégé sous la toiture d'un bâtiment.">
+          </article>
+          </li>
+        </ul>
+      </div>
+      <button class="carrousel__fleche carrousel__fleche--suiv" type="button" data-carousel-next aria-label="Prestation suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
     </div>
   </div>
 </section>
