@@ -21,15 +21,15 @@
 }
 
 :root {
-    --c-vert: #3F5929;            --c-vert-sombre: #1B2A12;     --c-vert-accent: #658B42;     --c-creme: #F8F9F4;           --c-creme-2: #EEF1E7;         --c-creme-3: #F4F5F0;         --c-blanc: #FDFDFC;           --c-encre: #222E1B;           --c-encre-douce: #55614C;     --c-encre-claire: #A9BE94;    --c-trait: #E1E5D9;           --c-trait-sombre: #34472A;  
+    --c-vert: #FF6600;            --c-vert-sombre: #333333;     --c-vert-accent: #FF6600;     --c-creme: #FFFFFF;           --c-creme-2: #F3F3F1;         --c-creme-3: #F5F5F3;         --c-blanc: #FFFFFF;           --c-encre: #1E1E1E;           --c-encre-douce: #585858;     --c-encre-claire: #C4C4C4;    --c-trait: #E6E6E3;           --c-trait-sombre: #4A4A4A;  
     --v-verre: rgba(253, 253, 252, .62);
   --v-verre-bord: rgba(253, 253, 252, .72);
-  --v-verre-sombre: rgba(27, 42, 18, .55);
-  --v-photo: linear-gradient(100deg, rgba(20, 32, 13, .78) 0%, rgba(20, 32, 13, .55) 42%, rgba(20, 32, 13, .12) 78%);
-    --v-entete: linear-gradient(to bottom, rgba(20, 32, 13, .55) 0%, rgba(20, 32, 13, .28) 45%, transparent 100%);
-    --v-photo-bas: linear-gradient(to top, rgba(20, 32, 13, .88) 0%, rgba(20, 32, 13, .72) 30%, rgba(20, 32, 13, .34) 58%, transparent 84%);
-    --v-appel-mobile: linear-gradient(to top, rgba(20, 32, 13, .92) 0%, rgba(20, 32, 13, .82) 50%, rgba(20, 32, 13, .66) 100%);
-  --v-carte-mobile: linear-gradient(to top, rgba(20, 32, 13, .92) 10%, rgba(20, 32, 13, .66) 52%, rgba(20, 32, 13, .2) 86%);
+  --v-verre-sombre: rgba(34, 34, 34, .55);
+  --v-photo: linear-gradient(100deg, rgba(24, 24, 24, .78) 0%, rgba(24, 24, 24, .55) 42%, rgba(24, 24, 24, .12) 78%);
+    --v-entete: linear-gradient(to bottom, rgba(24, 24, 24, .55) 0%, rgba(24, 24, 24, .28) 45%, transparent 100%);
+    --v-photo-bas: linear-gradient(to top, rgba(24, 24, 24, .88) 0%, rgba(24, 24, 24, .72) 30%, rgba(24, 24, 24, .34) 58%, transparent 84%);
+    --v-appel-mobile: linear-gradient(to top, rgba(24, 24, 24, .92) 0%, rgba(24, 24, 24, .82) 50%, rgba(24, 24, 24, .66) 100%);
+  --v-carte-mobile: linear-gradient(to top, rgba(24, 24, 24, .92) 10%, rgba(24, 24, 24, .66) 52%, rgba(24, 24, 24, .2) 86%);
 
     --f-titre: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
 
@@ -86,8 +86,8 @@
   --r-2xl: 28px;
   --r-pill: 999px;
 
-    --sh-carte: 0 18px 40px -24px rgba(27, 42, 18, .28);
-  --sh-flottant: 0 30px 70px -30px rgba(27, 42, 18, .45);
+    --sh-carte: 0 18px 40px -24px rgba(34, 34, 34, .28);
+  --sh-flottant: 0 30px 70px -30px rgba(34, 34, 34, .45);
 
     --tr-rapide: 140ms cubic-bezier(.2, .6, .3, 1);
   --tr-normal: 260ms cubic-bezier(.2, .6, .3, 1);

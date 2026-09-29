@@ -91,7 +91,7 @@
 .entete[data-fond='sombre'] .marque { color: var(--c-blanc); }
 .entete[data-fond='sombre'] .burger {
   background: var(--c-blanc);
-  border-color: rgba(27, 42, 18, .12);
+  border-color: rgba(34, 34, 34, .12);
 }
 .entete[data-fond='sombre'] .burger__trait { background: var(--c-vert); }
 .marque__signe { width: 26px; height: 26px; flex-shrink: 0; }
@@ -110,7 +110,7 @@
   gap: 2px;
   padding: 6px;
   border-radius: var(--r-pill);
-  background: rgba(27, 42, 18, .9);
+  background: rgba(34, 34, 34, .9);
   border: 1px solid rgba(253, 253, 252, .14);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
@@ -156,7 +156,7 @@
   padding: 0;
   border: 1px solid rgba(253, 253, 252, .18);
   border-radius: var(--r-pill);
-  background: rgba(27, 42, 18, .9);
+  background: rgba(34, 34, 34, .9);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
 }
