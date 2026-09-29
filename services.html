@@ -192,16 +192,118 @@
     <div class="section-entete section-entete--centre">
       <p class="badge badge--accent">Avant / après</p>
       <h2 class="section-titre">Mes chantiers en images</h2>
-      <p class="section-chapo">Des toitures du secteur, photographiées avant et après mon passage.</p>
+      <p class="section-chapo">Faites glisser la poignée pour comparer avant et après mon passage.</p>
     </div>
 
-    <div class="galerie">
-      <figure class="galerie__item"><img class="visuel-photo" src="assets/img/avant-apres-1.webp" width="1000" height="1000" loading="lazy" alt="Maison avec lucarne : toiture noircie avant, tuiles propres après le nettoyage."><figcaption>Nettoyage de toiture</figcaption></figure>
-      <figure class="galerie__item"><img class="visuel-photo" src="assets/img/avant-apres-2.webp" width="1000" height="1000" loading="lazy" alt="Toiture autour d'une cheminée : tuiles couvertes de mousse avant, rouges après traitement."><figcaption>Démoussage et traitement</figcaption></figure>
-      <figure class="galerie__item"><img class="visuel-photo" src="assets/img/avant-apres-3.webp" width="1000" height="1000" loading="lazy" alt="Maison de plain-pied : toit terni avant, toit nettoyé après."><figcaption>Nettoyage de toiture</figcaption></figure>
-      <figure class="galerie__item"><img class="visuel-photo" src="assets/img/avant-apres-4.webp" width="1000" height="1000" loading="lazy" alt="Maison en L : tuiles sombres avant, tuiles nettoyées après."><figcaption>Nettoyage des tuiles</figcaption></figure>
-      <figure class="galerie__item"><img class="visuel-photo" src="assets/img/avant-apres-5.webp" width="745" height="1000" loading="lazy" alt="Habillage en zinc rouillé avant, habillage en zinc neuf après."><figcaption>Habillage en zinc</figcaption></figure>
-      <figure class="galerie__item"><img class="visuel-photo" src="assets/img/avant-apres-6.webp" width="1000" height="1000" loading="lazy" alt="Dessous de toit avant et après la pose d'une rive en zinc."><figcaption>Pose de rive en zinc</figcaption></figure>
+    <div class="comparateurs">
+      <figure class="comparateur">
+        <div class="avant-apres">
+          <div class="avant-apres__couche">
+            <img class="visuel-photo" src="assets/img/aa-1-avant.webp" width="1400" height="500" loading="lazy" alt="Avant : maison avec lucarne.">
+          </div>
+          <div class="avant-apres__couche avant-apres__couche--apres">
+            <img class="visuel-photo" src="assets/img/aa-1-apres.webp" width="1400" height="500" loading="lazy" alt="Après : maison avec lucarne.">
+          </div>
+          <span class="avant-apres__etiquette avant-apres__etiquette--avant">Avant</span>
+          <span class="avant-apres__etiquette avant-apres__etiquette--apres">Après</span>
+          <div class="avant-apres__poignee">
+            <button class="avant-apres__bouton" type="button" role="slider" aria-label="Comparer avant et après — nettoyage de toiture" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg>
+            </button>
+          </div>
+        </div>
+        <figcaption class="comparateur__legende">Nettoyage de toiture</figcaption>
+      </figure>
+      <figure class="comparateur">
+        <div class="avant-apres">
+          <div class="avant-apres__couche">
+            <img class="visuel-photo" src="assets/img/aa-2-avant.webp" width="1400" height="500" loading="lazy" alt="Avant : toiture autour d'une cheminée.">
+          </div>
+          <div class="avant-apres__couche avant-apres__couche--apres">
+            <img class="visuel-photo" src="assets/img/aa-2-apres.webp" width="1400" height="500" loading="lazy" alt="Après : toiture autour d'une cheminée.">
+          </div>
+          <span class="avant-apres__etiquette avant-apres__etiquette--avant">Avant</span>
+          <span class="avant-apres__etiquette avant-apres__etiquette--apres">Après</span>
+          <div class="avant-apres__poignee">
+            <button class="avant-apres__bouton" type="button" role="slider" aria-label="Comparer avant et après — démoussage et traitement" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg>
+            </button>
+          </div>
+        </div>
+        <figcaption class="comparateur__legende">Démoussage et traitement</figcaption>
+      </figure>
+      <figure class="comparateur">
+        <div class="avant-apres">
+          <div class="avant-apres__couche">
+            <img class="visuel-photo" src="assets/img/aa-3-avant.webp" width="1400" height="500" loading="lazy" alt="Avant : maison de plain-pied.">
+          </div>
+          <div class="avant-apres__couche avant-apres__couche--apres">
+            <img class="visuel-photo" src="assets/img/aa-3-apres.webp" width="1400" height="500" loading="lazy" alt="Après : maison de plain-pied.">
+          </div>
+          <span class="avant-apres__etiquette avant-apres__etiquette--avant">Avant</span>
+          <span class="avant-apres__etiquette avant-apres__etiquette--apres">Après</span>
+          <div class="avant-apres__poignee">
+            <button class="avant-apres__bouton" type="button" role="slider" aria-label="Comparer avant et après — nettoyage de toiture" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg>
+            </button>
+          </div>
+        </div>
+        <figcaption class="comparateur__legende">Nettoyage de toiture</figcaption>
+      </figure>
+      <figure class="comparateur">
+        <div class="avant-apres">
+          <div class="avant-apres__couche">
+            <img class="visuel-photo" src="assets/img/aa-4-avant.webp" width="1400" height="500" loading="lazy" alt="Avant : maison en L.">
+          </div>
+          <div class="avant-apres__couche avant-apres__couche--apres">
+            <img class="visuel-photo" src="assets/img/aa-4-apres.webp" width="1400" height="500" loading="lazy" alt="Après : maison en L.">
+          </div>
+          <span class="avant-apres__etiquette avant-apres__etiquette--avant">Avant</span>
+          <span class="avant-apres__etiquette avant-apres__etiquette--apres">Après</span>
+          <div class="avant-apres__poignee">
+            <button class="avant-apres__bouton" type="button" role="slider" aria-label="Comparer avant et après — nettoyage des tuiles" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg>
+            </button>
+          </div>
+        </div>
+        <figcaption class="comparateur__legende">Nettoyage des tuiles</figcaption>
+      </figure>
+      <figure class="comparateur">
+        <div class="avant-apres">
+          <div class="avant-apres__couche">
+            <img class="visuel-photo" src="assets/img/aa-5-avant.webp" width="1400" height="500" loading="lazy" alt="Avant : habillage en zinc sur une toiture en tuiles.">
+          </div>
+          <div class="avant-apres__couche avant-apres__couche--apres">
+            <img class="visuel-photo" src="assets/img/aa-5-apres.webp" width="1400" height="500" loading="lazy" alt="Après : habillage en zinc sur une toiture en tuiles.">
+          </div>
+          <span class="avant-apres__etiquette avant-apres__etiquette--avant">Avant</span>
+          <span class="avant-apres__etiquette avant-apres__etiquette--apres">Après</span>
+          <div class="avant-apres__poignee">
+            <button class="avant-apres__bouton" type="button" role="slider" aria-label="Comparer avant et après — habillage en zinc" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg>
+            </button>
+          </div>
+        </div>
+        <figcaption class="comparateur__legende">Habillage en zinc</figcaption>
+      </figure>
+      <figure class="comparateur">
+        <div class="avant-apres">
+          <div class="avant-apres__couche">
+            <img class="visuel-photo" src="assets/img/aa-6-avant.webp" width="1400" height="500" loading="lazy" alt="Avant : dessous de toit et rive.">
+          </div>
+          <div class="avant-apres__couche avant-apres__couche--apres">
+            <img class="visuel-photo" src="assets/img/aa-6-apres.webp" width="1400" height="500" loading="lazy" alt="Après : dessous de toit et rive.">
+          </div>
+          <span class="avant-apres__etiquette avant-apres__etiquette--avant">Avant</span>
+          <span class="avant-apres__etiquette avant-apres__etiquette--apres">Après</span>
+          <div class="avant-apres__poignee">
+            <button class="avant-apres__bouton" type="button" role="slider" aria-label="Comparer avant et après — pose de rive en zinc" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg>
+            </button>
+          </div>
+        </div>
+        <figcaption class="comparateur__legende">Pose de rive en zinc</figcaption>
+      </figure>
     </div>
 
     <p class="section-suite section-suite--centre"><a class="lien-fleche" href="https://maps.google.com/?cid=17760321871911499549" target="_blank" rel="noopener">Voir toutes mes photos sur ma fiche Google
@@ -304,5 +406,6 @@
 
 <script src="js/apparitions.js"></script>
 <script src="js/main.js"></script>
+<script src="js/toiture.js"></script>
 </body>
 </html>
