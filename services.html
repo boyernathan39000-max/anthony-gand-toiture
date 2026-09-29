@@ -75,7 +75,20 @@
 
 <section class="section section--creme section--haut-nul">
   <div class="contenu">
-    <div class="prestations">
+    <div class="carrousel" id="carrousel-prestations">
+      <div class="carrousel__barre">
+        <div class="carrousel__onglets" role="tablist" aria-label="Choisir une prestation">
+          <button class="carrousel__onglet" type="button" data-cible="0" aria-current="true">01 · Toiture</button>
+          <button class="carrousel__onglet" type="button" data-cible="1">02 · Dessous de toit</button>
+          <button class="carrousel__onglet" type="button" data-cible="2">03 · Gouttières</button>
+          <button class="carrousel__onglet" type="button" data-cible="3">04 · Charpente</button>
+        </div>
+        <div class="rail__commandes carrousel__fleches">
+          <button class="rail__fleche" type="button" data-carrousel="prec" aria-label="Prestation précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+          <button class="rail__fleche" type="button" data-carrousel="suiv" aria-label="Prestation suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    <div class="prestations carrousel__piste" tabindex="0" role="region" aria-label="Les 4 prestations, une par une">
 
       <article class="presta" id="traitement-toiture">
         <div>
@@ -183,6 +196,7 @@
              alt="Pignon en bois traité et protégé sous la toiture d'un bâtiment.">
       </article>
 
+    </div>
     </div>
   </div>
 </section>

@@ -294,3 +294,51 @@ a.carte--nu { display: block; color: inherit; text-decoration: none; }
   .appel--large { padding-inline: clamp(24px, 6vw, 40px); }
   .appel--large .appel__action--double { flex-wrap: wrap; }
 }
+
+.carrousel__barre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-6);
+  margin-block-end: var(--sp-6);
+}
+.carrousel__onglets { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.carrousel__onglet {
+  height: 44px;
+  padding-inline: var(--sp-5);
+  border: 1px solid var(--c-trait);
+  border-radius: var(--r-pill);
+  background: var(--c-blanc);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-demi);
+  color: var(--c-encre);
+  cursor: pointer;
+  transition: background var(--tr-rapide), color var(--tr-rapide), border-color var(--tr-rapide);
+}
+@media (hover: hover) { .carrousel__onglet:hover { border-color: var(--c-gris); } }
+.carrousel__onglet[aria-current='true'] { background: var(--c-orange); border-color: var(--c-orange); color: var(--c-blanc); }
+.carrousel__fleches { display: flex; gap: var(--sp-3); margin: 0; }
+
+.prestations.carrousel__piste {
+  display: flex;
+  gap: var(--sp-6);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.carrousel__piste::-webkit-scrollbar { display: none; }
+.carrousel__piste > .presta {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  box-shadow: none;
+}
+@media (prefers-reduced-motion: reduce) { .prestations.carrousel__piste { scroll-behavior: auto; } }
+@media (max-width: 767px) {
+  .carrousel__barre { flex-direction: column; align-items: stretch; }
+  .carrousel__onglets { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .carrousel__onglet { flex-shrink: 0; }
+  .carrousel__fleches { justify-content: flex-end; }
+}
